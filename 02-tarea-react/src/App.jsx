@@ -1,4 +1,4 @@
-import TaskItem from './components/TaskItem'
+import TaskItem from './components/TaskItem.jsx'
 import { tareas } from './data.js'
 
 function App() {
