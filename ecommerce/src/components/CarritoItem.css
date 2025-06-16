@@ -1,0 +1,165 @@
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 1rem;
+}
+
+.carrito-item:last-child {
+  border-bottom: none;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.item-imagen {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.item-detalles {
+  flex: 1;
+}
+
+.item-nombre {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.item-precio-unitario {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 0.25rem 0;
+}
+
+.item-subtotal {
+  font-size: 0.875rem;
+  color: #059669;
+  font-weight: 600;
+  margin: 0;
+}
+
+.item-controles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.cantidad-controles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  padding: 0.25rem;
+}
+
+.btn-cantidad {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-cantidad:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.btn-cantidad:active {
+  transform: scale(0.95);
+}
+
+.cantidad-display {
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.btn-eliminar {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+.btn-eliminar:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carrito-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+  
+  .item-info {
+    justify-content: flex-start;
+  }
+  
+  .item-controles {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cantidad-controles {
+    order: 1;
+  }
+  
+  .btn-eliminar {
+    order: 2;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-imagen {
+    font-size: 1.5rem;
+  }
+  
+  .item-nombre {
+    font-size: 0.875rem;
+  }
+  
+  .cantidad-controles {
+    gap: 0.25rem;
+  }
+  
+  .btn-cantidad {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}

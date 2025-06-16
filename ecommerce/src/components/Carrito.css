@@ -1,0 +1,155 @@
+.carrito-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carrito-titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Carrito vacío */
+.carrito-vacio {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.carrito-vacio-icon {
+  margin: 0 auto 1rem;
+  color: #d1d5db;
+}
+
+.carrito-vacio-texto {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.btn-continuar-compras {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-continuar-compras:hover {
+  background-color: #2563eb;
+}
+
+/* Items del carrito */
+.carrito-items {
+  margin-bottom: 2rem;
+}
+
+/* Resumen del carrito */
+.carrito-resumen {
+  border-top: 2px solid #f3f4f6;
+  padding-top: 1.5rem;
+}
+
+.carrito-total-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.carrito-total-precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.btn-vaciar-carrito {
+  color: #ef4444;
+  background-color: transparent;
+  border: 1px solid #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.btn-vaciar-carrito:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+.carrito-botones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-continuar {
+  flex: 1;
+  min-width: 150px;
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-continuar:hover {
+  background-color: #4b5563;
+}
+
+.btn-procesar-orden {
+  flex: 1;
+  min-width: 150px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-procesar-orden:hover {
+  background-color: #059669;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carrito-container {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+  
+  .carrito-total-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .carrito-botones {
+    flex-direction: column;
+  }
+  
+  .btn-continuar,
+  .btn-procesar-orden {
+    min-width: auto;
+  }
+}
