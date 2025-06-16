@@ -1,0 +1,46 @@
+/* ==========================================
+   RESET Y BASE
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* ==========================================
+   LAYOUT PRINCIPAL
+   ========================================== */
+.app {
+  min-height: 100vh;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ==========================================
+   UTILIDADES GENERALES
+   ========================================== */
+.no-productos {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
