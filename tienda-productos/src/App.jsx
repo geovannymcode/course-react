@@ -22,7 +22,14 @@ function App() {
 
       <main className="main">
         
-
+<SearchBar onSearch={searchProducts} loading={loading} />
+        
+        <div className="results-info">
+          {products.length > 0 && (
+            <p>{products.length} productos encontrados</p>
+          )}
+        </div>
+        
         <ProductList
           products={products}
           loading={loading}
