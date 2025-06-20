@@ -1,30 +1,41 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ProductCard from './ProductCard';
+import { useProducts } from '../hooks/useProducts';
 
 function ProductList() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [query, setQuery] = useState('');
+  const { products, loading, error, searchProducts } = useProducts();
 
-  useEffect(() => {
-    fetch('https://dummyjson.com/products?limit=10')
-      .then((res) => {
-        if (!res.ok) throw new Error('Error al cargar productos');
-        return res.json();
-      })
-      .then((data) => setProducts(data.products))
-      .catch((err) => setError(err))
-      .finally(() => setLoading(false));
-  }, []);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (query.trim() !== '') {
+      searchProducts(query);
+    }
+  };
 
   if (loading) return <p>Cargando productos...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div>
+      <form onSubmit={handleSearch} style={{ marginBottom: '1rem' }}>
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          style={{ padding: '0.5rem', width: '60%' }}
+        />
+        <button type="submit" style={{ padding: '0.5rem' }}>🔍 Buscar</button>
+      </form>
+
+      {products.length === 0 && <p>No se encontraron productos</p>}
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 }
